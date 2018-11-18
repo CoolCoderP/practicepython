@@ -1,0 +1,24 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+        <title>Home</title>
+        <link href="{%static 'player/style.css' %}" rel="stylesheet">
+  </head>     
+  <body>
+        <h1>
+                Welcome {{user.username}}
+        </h1>
+        <!--We have {{ngames}} in the database-->
+        Your active games are : 
+        {% for g in games %}
+            <li>
+                Game {{g.id}} : {{g.first_player}}  vs {{g.second_player}}
+            </li>
+        {% endfor %}
+        <ul>
+
+        </ul>
+  </body>
+
+</html>
